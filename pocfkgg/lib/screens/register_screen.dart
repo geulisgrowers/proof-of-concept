@@ -20,6 +20,11 @@ class _RegisterPageState extends State<RegisterPage> {
           title: const Text("Aplikasi Kebun FKGG"),
           centerTitle: true,
           backgroundColor: Colors.black,
+          titleTextStyle: const TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
         backgroundColor: Colors.grey[300],
         body: Center(
@@ -97,6 +102,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: const Text(
                       'Registrasi Akun',
                       textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
                     ),
                   ),
                 ),

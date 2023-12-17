@@ -12,7 +12,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   final FirebaseAuthService _auth = FirebaseAuthService();
 
   // controllers
@@ -32,6 +31,11 @@ class _LoginPageState extends State<LoginPage> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Aplikasi Kebun FKGG"),
+          titleTextStyle: const TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
           centerTitle: true,
           backgroundColor: Colors.black,
         ),
@@ -111,6 +115,10 @@ class _LoginPageState extends State<LoginPage> {
                     child: const Text(
                       'Login',
                       textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
                     ),
                   ),
                 ),
@@ -126,7 +134,10 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(context,MaterialPageRoute(builder:(context) => const RegisterPage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const RegisterPage()));
                       },
                       child: Text(
                         ' Registrasi Sekarang',
@@ -152,9 +163,10 @@ class _LoginPageState extends State<LoginPage> {
 
     User? user = await _auth.signInWithEmailAndPassword(email, password);
 
-    if (user != null){
+    if (user != null) {
       print("User is signed in");
-      Navigator.push(context, MaterialPageRoute(builder:(context) => HomePage()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
     } else {
       print("Error occured");
     }
